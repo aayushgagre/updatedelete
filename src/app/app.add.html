@@ -1,0 +1,59 @@
+
+<div class="jumbotron">
+        <h1>Add Employee</h1>
+    <table class="table">
+    <tr>
+        <td >Employee Id</td>
+        <td><input type="text" [(ngModel)]="empId"/></td>
+    </tr>
+    <tr>
+        <td>Employee Name</td>
+        <td><input type="text" [(ngModel)]="empName"/></td>
+    </tr>
+    <tr>
+        <td>Employee Salary</td>
+        <td><input type="text" [(ngModel)]="empSalary"/></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Add Data" (click)="addEmployee()" class="btn btn-secondary"/></td>
+    </tr>
+</table>
+
+<h2>Show all Employee</h2>
+<table border="1" class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th colspan="2" style="text-align:center">Actions</th>
+    </tr>
+</thead>
+    <tr *ngFor="let data of empall;let i=index">
+        <td>{{data.empId}}</td>
+        <td>{{data.empName}}</td>
+        <td>{{data.empSalary}}</td>
+        <td><input type="button" value="Delete" (click)="deleteEmployee(i)" class="btn btn-danger"/></td>
+        <td><input type="button" value="Update" (click)="editEmployee(i)" class="btn btn-primary"/></td>
+    </tr>
+</table>
+<br>
+<table class="table">
+    <tr>
+        <td>Employee Id</td>
+        <td><input type="text" [(ngModel)]="model.id"/></td>
+    </tr>
+    <tr>
+        <td>Employee Name</td>
+        <td><input type="text" [(ngModel)]="model.name"/></td>
+    </tr>
+    <tr>
+        <td>Employee Salary</td>
+        <td><input type="text" [(ngModel)]="model.salary"/></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Update Data" (click)="updateEmployee()" class="btn btn-primary"/></td>
+    </tr>
+</table>
+</div>
+
